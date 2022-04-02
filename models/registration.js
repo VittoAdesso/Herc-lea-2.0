@@ -1,37 +1,33 @@
-'use strict'; // INTO ECMAScript 6 IS NOT NECESSARY TO USE VITTO ... OK?
+'use strict';
 
 const {
     Model
 } = require('sequelize');
 
 module.exports = (sequelize, DataTypes) => {
-    class competitions extends Model {
+    class registration extends Model {
 
     static associate(models) {
     }
 }
   // generate the model into BBDD
-competitions.init({
+registration.init({
+    swimmerId: {
+    type: DataTypes.STRING,
+    allowNull: false
+    },
     competitionId: {
     type: DataTypes.STRING,
     allowNull: false
     },
-    nameCompetition: {
-    type: DataTypes.STRING,
-    allowNull: false
-    },
-    styleId: {
+    whatPosition: {
     type: DataTypes.DECIMAL,
     allowNull: true
     },
-    isCelebrate: {
-        type: DataTypes.BOOLEAN,
-        allowNull: false
-    }
 }, {
     sequelize,
-    modelName: 'competitions',
+    modelName: 'registration',
 });
 
-return competitions;
+return registration;
 };
