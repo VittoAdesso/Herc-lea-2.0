@@ -1,6 +1,6 @@
 const db = require('../models');
 const Competition = db.competitions;
-const SwimStyle = db.swiStyle;
+const SwimStyle = db.swimStyle;
 
 // findOne by id, controlling errors in case dont find an exist one
 exports.findOne = async (req, res) => {

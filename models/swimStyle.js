@@ -32,6 +32,5 @@ swimStyle.init({
     sequelize,
     modelName: 'swimStyle',
 });
-
 return swimStyle;
 };

@@ -8,6 +8,7 @@ app.use(express.urlencoded({ extended : true }));
 app.use(express.json());
 
 require('./routes/swimmer.routes')(app);
+require('./routes/competitions.routes')(app);
 
 
 

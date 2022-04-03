@@ -10,7 +10,7 @@ module.exports = (sequelize, DataTypes) => {
     static associate(models) {
         models.competitions.belongsTo(models.swimStyle, {
             foreignKey: "styleId", 
-            as: "swimStyle",
+            as: "swimStyle"
         })
     }
 }
