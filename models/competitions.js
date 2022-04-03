@@ -14,6 +14,7 @@ module.exports = (sequelize, DataTypes) => {
         })
     }
 }
+
   // generate the model into BBDD
 competitions.init({
     competitionId: {
