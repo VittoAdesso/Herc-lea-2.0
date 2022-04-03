@@ -4,6 +4,8 @@ const PORT = process.env.PORT || 4000;
 
 const app = express();
 
+app.use(express.urlencoded({ extended : true }));
+app.use(express.json());
 
 require('./routes/swimmer.routes')(app);
 

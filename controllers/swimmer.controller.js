@@ -1,11 +1,6 @@
 const db = require('../models');
 const Swimmer = db.swimmers;
 
-// to find all swimmers 
-exports.findAll = async (req, res) => {
-    const swimmers = await Swimmer.findAll();
-    res.send(swimmers);
-}
 
 // findOne by id, controlling errors in case dont find an exist one
 exports.findOne = async (req, res) => {
@@ -25,5 +20,31 @@ exports.findOne = async (req, res) => {
     catch (err) { return res.status(500).json(err); } 
 };
 
+exports.create = async (req, res) => {
+    // Validate request
+    if (!req.body.swimmerId) {
+        res.status(400).send({
+            message: "Content can not be empty!"
+        });
+    return;
+    }
+    // Create a new newSwimmer
+    const newSwimmer = {
+        swimmerId: req.body.swimmerId,
+        name: req.body.name,
+        sex: req.body.sex,
+    };
+    // Save new Swimmer in the database
+    Swimmer.create(newSwimmer)
+    .then(newSwimmerOne => {
+    res.send(newSwimmerOne);
+    })
+    .catch(err => {
+    res.status(500).send({
+        message:
+            err.message || "Some error occurred while creating the new newSwimmer"
+    });
+    });
+};
 
 
