@@ -8,6 +8,10 @@ module.exports = (sequelize, DataTypes) => {
     class competitions extends Model {
 
     static associate(models) {
+        models.competitions.belongsTo(models.swimStyle, {
+            foreignKey: "styleId", 
+            as: "swimStyle",
+        })
     }
 }
   // generate the model into BBDD
@@ -19,10 +23,6 @@ competitions.init({
     nameCompetition: {
     type: DataTypes.STRING,
     allowNull: false
-    },
-    styleId: {
-    type: DataTypes.DECIMAL,
-    allowNull: true
     },
     isCelebrate: {
         type: DataTypes.BOOLEAN,

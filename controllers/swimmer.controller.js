@@ -1,7 +1,6 @@
 const db = require('../models');
 const Swimmer = db.swimmers;
 
-
 // findOne by id, controlling errors in case dont find an exist one
 exports.findOne = async (req, res) => {
     const id = req.params.id; 
@@ -28,22 +27,22 @@ exports.create = async (req, res) => {
         });
     return;
     }
-    // Create a new newSwimmer
+    // Create a constant with struture of new newSwimmer
     const newSwimmer = {
         swimmerId: req.body.swimmerId,
         name: req.body.name,
         sex: req.body.sex,
     };
-    // Save new Swimmer in the database
+    // Create and Save new in the database
     Swimmer.create(newSwimmer)
     .then(newSwimmerOne => {
-    res.send(newSwimmerOne);
+        res.send(newSwimmerOne);
     })
     .catch(err => {
-    res.status(500).send({
-        message:
-            err.message || "Some error occurred while creating the new newSwimmer"
-    });
+        res.status(500).send({
+            message:
+                err.message || "Some error occurred while creating the new newSwimmer"
+        });
     });
 };
 

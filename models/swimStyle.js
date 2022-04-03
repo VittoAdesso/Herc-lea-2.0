@@ -8,6 +8,10 @@ module.exports = (sequelize, DataTypes) => {
     class swimStyle extends Model {
 
     static associate(models) {
+        models.swimStyle.hasMany(models.competitions, {
+            foreignKey: "styleId", 
+            as: "competitions"
+        })
     }
 }
   // generate the model into BBDD
