@@ -8,6 +8,8 @@ I used:
 
 ``Mysql with Orm Sequeilize``
 
-``Express to create api``
+``FrameWork Express to create api``
 
 ``Nodemoon to automatically restarting the node application when file changes in the directory are detected``
+
+``Yup library to validations`` 
