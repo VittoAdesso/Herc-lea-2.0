@@ -1,6 +1,5 @@
 // i use yup, is  a library to validate
 const yup = require('yup'); 
-
 // helper or funtion i use into the route, is type of skeleton
 function validate(validation){
     return (req, res, next) => {
@@ -11,12 +10,9 @@ function validate(validation){
         } catch (err) {
             next(err);
         }
-
     }
 }
-
 // i want to validate data, the user submit
-
 function createSwimmerValidation(data){
     // created guía = library is an object and sahpe is waht types of fields i want or model ... 
     const schema = yup.object().shape({
@@ -24,10 +20,8 @@ function createSwimmerValidation(data){
         name: yup.string().min(3).required(),
         sex: yup.string().min(3).required(),
     });
-
     schema.validateSync(data);
 }
-
 // if i want to use outside this file, i have to export it
 module.exports = {
     validate, 
