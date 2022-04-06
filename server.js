@@ -9,6 +9,7 @@ app.use(express.json());
 
 require('./routes/swimmer.routes')(app);
 require('./routes/competitions.routes')(app);
+require('./routes/registration.routes')(app);
 
 
 
