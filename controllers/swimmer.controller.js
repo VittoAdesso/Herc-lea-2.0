@@ -1,4 +1,5 @@
 const db = require('../models');
+// i call the model because i associate table, and if ai want to see into the results of querys, i have to define here also
 const Swimmer = db.swimmers;
 
 // findOne by id, controlling errors in case dont find an exist one

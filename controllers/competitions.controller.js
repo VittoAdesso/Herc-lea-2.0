@@ -6,6 +6,7 @@ const SwimStyle = db.swimStyle;
 // i want to find only competitions have status TRUE or celebrate
 exports.findByStatusTrue = async (req, res) => {
     const competitions = await Competition.findAll({
+        //here i call the associaton, because i want when i ask they give me all details, see postman
         include: {
             model: SwimStyle,
             as: "swimStyle"
