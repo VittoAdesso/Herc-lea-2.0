@@ -1,6 +1,35 @@
 const db = require('../models');
 const Competition = db.competitions;
+// i have to define const SWINSTYLE have value model because is associate, an i want to incluede into the query 
 const SwimStyle = db.swimStyle;
+
+// i want to find only competitions have status TRUE or celebrate
+exports.findByStatusTrue = async (req, res) => {
+    const competitions = await Competition.findAll({
+        include: {
+            model: SwimStyle,
+            as: "swimStyle"
+        },
+        where: {
+            isCelebrate : true
+        }
+    });
+    res.send(competitions);
+}
+
+// i want to find only competitions have status FALSE  or NON celebrate
+exports.findByStatusFalse = async (req, res) => {
+    const competitionsStatus = await Competition.findAll({
+        include: {
+            model: SwimStyle,
+            as: "swimStyle"
+        },
+        where: {
+            isCelebrate : false
+        }
+    });
+    res.send(competitionsStatus);
+}
 
 // findOne by id, controlling errors in case dont find an exist one
 exports.findOne = async (req, res) => {
@@ -20,6 +49,7 @@ exports.findOne = async (req, res) => {
     catch (err) { return res.status(500).json(err); } 
 };
 
+// TO CREATE A NEW ONE 
 exports.create = async (req, res) => {
     // Validate request
     if (!req.body.competitionId) {
@@ -28,7 +58,7 @@ exports.create = async (req, res) => {
         });
     return;
     }
-    // Create a constant with struture of new newCompetition
+// Create a constant with struture of new newCompetition
     const newCompetition = {
         competitionId: req.body.competitionId,
         nameCompetition:  req.body.nameCompetition,
@@ -47,5 +77,4 @@ exports.create = async (req, res) => {
         });
     });
 };
-
 
