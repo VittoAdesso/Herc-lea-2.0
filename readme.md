@@ -1,20 +1,20 @@
 # API swim OF competitions => Hercúlea 2.0 
 
-<h1>Sever is up on :<h1> 
+Sever is up on :
 
 **http://localhost:4000/**
 
-<h2> npm i to install all dependencies<h2>
+``npm i to install all dependencies``
 
-<h1>Into the terminal to run the API code:<h1>
+__Run into the terminal:__
 
 ``npm start`` 
 
 <h1>I used:<h1>
 
-``Mysql with Orm Sequeilize``
+``Mysql with Orm Sequelize``
 
-``To deploy bbdd i used clever-cloud``
+``To deploy bbdd => clever-cloud``
 
 ``FrameWork Express to create api``
 
