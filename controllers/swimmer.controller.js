@@ -1,25 +1,24 @@
 const db = require('../models');
-// i call the model because i associate table, and if ai want to see into the results of querys, i have to define here also
 const Swimmer = db.swimmers;
 
 // findOne by id, controlling errors in case dont find an exist one
 exports.findOne = async (req, res) => {
     const id = req.params.id; 
     try { 
-    const swimmer = await Swimmer.findOne({
-        where: {
-            id 
-        },
-    });
-    if (swimmer) { 
-        return res.status(200).json(swimmer);
-    } 
-    else { 
-        return res.status(404).json('No Swimmer found by this id'); } 
-    } 
-    catch (err) { return res.status(500).json(err); } 
+        const swimmer = await Swimmer.findOne({
+            where: {
+                id 
+            },
+        });
+        if (swimmer) { 
+            return res.status(200).json(swimmer);
+        } else { 
+            return res.status(404).json('No Swimmer found by this id'); 
+        } 
+    } catch (err) { return res.status(500).json(err); } 
 };
 
+// to create one 
 exports.create = async (req, res) => {
     // Validate request
     if (!req.body.swimmerId) {
@@ -29,11 +28,11 @@ exports.create = async (req, res) => {
     return;
     }
     // Create a constant with struture of new newSwimmer
-    const newSwimmer = {
-        swimmerId: req.body.swimmerId,
-        name: req.body.name,
-        sex: req.body.sex,
-    };
+        const newSwimmer = {
+            swimmerId: req.body.swimmerId,
+            name: req.body.name,
+            sex: req.body.sex,
+        };
     // Create and Save new in the database
     Swimmer.create(newSwimmer)
     .then(newSwimmerOne => {

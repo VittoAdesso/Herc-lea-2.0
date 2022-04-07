@@ -11,8 +11,6 @@ require('./routes/swimmer.routes')(app);
 require('./routes/competitions.routes')(app);
 require('./routes/registration.routes')(app);
 
-
-
 //config listen port 
 db.sequelize.sync().then(() => {
     app.listen(PORT, () => {

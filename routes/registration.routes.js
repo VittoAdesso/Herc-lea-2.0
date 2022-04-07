@@ -4,9 +4,8 @@ module.exports = app => {
     
     // find a one register 
     router.get('/:id', register.findOne);
-
+    // to create one
     router.post("/", register.create);
-
     //define route gral
     app.use('/api/register', router);
 }

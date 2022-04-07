@@ -4,19 +4,17 @@ const Registration = db.registration;
 // findOne by id, controlling errors in case dont find an exist one
 exports.findOne = async (req, res) => {
     const id = req.params.id; 
-    try { 
-    const register = await Registration.findOne({
-        where: {
-            id 
-        },
-    });
+        try { 
+        const register = await Registration.findOne({
+            where: {
+                id 
+            },
+        });
     if (register) { 
         return res.status(200).json(register);
-    } 
-    else { 
+    } else { 
         return res.status(404).json('No Registration found by this id'); } 
-    } 
-    catch (err) { return res.status(500).json(err); } 
+    } catch (err) { return res.status(500).json(err); } 
 };
 
 // exports.create = async (req, res) => {
