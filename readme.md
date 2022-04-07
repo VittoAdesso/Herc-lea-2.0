@@ -1,4 +1,4 @@
-# API swim OF competitions => Hercúlea 2.0 
+# API-REST swim OF competitions => Hercúlea 2.0 
 
 Sever is up on :
 
@@ -16,7 +16,7 @@ __Run into the terminal:__
 
 ``To deploy bbdd => clever-cloud``
 
-``FrameWork Express to create api``
+``FrameWork Express to building the API-REST``
 
 ``Nodemoon to automatically restarting the node application when file changes in the directory are detected``
 
