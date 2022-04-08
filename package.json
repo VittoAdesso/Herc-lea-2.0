@@ -19,6 +19,7 @@
     "yup": "^0.32.11"
   },
   "devDependencies": {
+    "jasmin": "^0.0.2",
     "nodemon": "^2.0.15",
     "sequelize-cli": "^6.4.1"
   }
