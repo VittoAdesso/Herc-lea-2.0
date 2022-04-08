@@ -6,6 +6,7 @@
     "host": "blmdeqg3nwr2lglcguh6-mysql.services.clever-cloud.com",
     "dialect": "mysql"
   },
+  
   "test": {
     "username": "root",
     "password": null,

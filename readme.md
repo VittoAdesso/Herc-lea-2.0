@@ -80,3 +80,9 @@ Add script to run:
 Run testing:
 
 ``npm test ``
+
+# Útil
+
+To create new file with terminal bash: 
+
+`` touch + name file `` 
