@@ -17,3 +17,6 @@ db.sequelize.sync().then(() => {
         console.log(`Listen on port ${PORT}`)
     })
 }); 
+
+// because i want to use into server.specs for the moment, but i thinking is better try each conntroller
+module.exports = server; 
